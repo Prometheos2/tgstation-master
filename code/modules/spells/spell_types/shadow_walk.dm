@@ -1,3 +1,4 @@
+#define SHADOW_REGEN_RATE 1.5
 /obj/effect/proc_holder/spell/targeted/shadowwalk
 	name = "Shadow Walk"
 	desc = "Grants unlimited movement in darkness."
