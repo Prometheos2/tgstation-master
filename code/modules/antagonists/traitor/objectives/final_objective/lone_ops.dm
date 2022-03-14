@@ -90,8 +90,10 @@
 		to_chat(user, span_boldwarning("The operation is a go! Time to join with the dropped operative and get that nuke disk."))
 	else
 		to_chat(user, span_boldwarning("The drop was a failure! The operative in probably dead or incapacited. You have be given 10 aditional TC. Try to cause the self destruction of the station alone."))
-		user.mind.find_syndicate_uplink().add_telecrystals(10)
-	
+		var/datum/component/uplink/uplink = user.mind.find_syndicate_uplink()
+		if (uplink)
+			uplink.add_telecrystals(10)
+
 /obj/item/card/emag/lone_ops_obj/proc/spawn_ops()
 	var/list/candidates = poll_ghost_candidates("Do you wish to be considered for the special role of Lone Operative'?", ROLE_OPERATIVE)
 
